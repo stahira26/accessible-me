@@ -1,71 +1,107 @@
 body {
   font-family: 'Roboto', Helvetica, sans-serif;
-  background-color: grey;
+  background-color: #f4f4f4; /* better contrast than grey */
+  color: #222;
   margin: 0;
-  padding: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Stick No Bills', 'Roboto', Helvetica, sans-serif;
+/* Accessible headings */
+h1, h2, h3 {
+  font-family: 'Stick No Bills', sans-serif;
 }
 
 .container {
   max-width: 1080px;
-  margin: 0 auto;
-  padding: 0 1rem;
+  margin: auto;
+  padding: 1rem;
 }
+
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: black;
+  color: white;
+  padding: 1rem;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  z-index: 999;
+}
+
+/* NAVIGATION */
+
+.main-nav ul { 
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap; 
+  margin: 0; 
+  padding: 0;
+} 
+
+ .main-nav li { 
+    flex: 1; 
+    text-align: center;
+    background-color:#000;
+} 
+
+ .main-nav a { 
+    display: block;
+    padding: 1rem; 
+    color: #fff; 
+    text-decoration: none;
+  } 
+
+ .main-nav a:hover, 
+ .main-nav a:focus { 
+     background-color: grey; 
+     outline: 2px solid #000; }
+
 
 img {
   width: 100%;
+  height: auto;
 }
 
-.main-nav ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
-}
+/* FORM */
 
-.main-nav ul li {
-  flex: 1;
-  text-align: center;
-}
-
-.main-nav ul li a {
-  display: block;
-  color: inherit;
-  text-decoration: none;
-  font-size: 1.25rem;
-}
-
-form input,
-form textarea {
-  display: block;
+ form input,
+ form textarea {
   width: 100%;
+  padding: .75rem;
   margin-bottom: 1rem;
-  padding: .5rem 1rem;
+  border: 2px solid #444;
+  border-radius: 4px;
 }
 
-form textarea {
-  min-height: 150px;
-  max-height: 150px;
-  height: 150px;
-  resize: none;
+form input:focus,
+form textarea:focus {
+  outline: 3px solid red;
 }
 
 form button {
-  background: none;
-  border: 2px solid black;
-  padding: 1rem;
-  text-transform: uppercase;
+  background: black;
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
 }
 
-.site-footer {
-  padding: 2rem 0;
+form button:hover,
+form button:focus {
+  background: #333;
 }
+
+/* FOOTER */
+
+.site-footer {
+  background-color:#000;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  width: 100%;
+  margin-top: 3rem;
+}
+
